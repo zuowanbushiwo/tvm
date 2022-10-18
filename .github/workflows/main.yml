@@ -36,7 +36,6 @@ concurrency:
 
 jobs:
   Android:
-    if: ${{ github.repository == 'apache/tvm' }}
     runs-on: Ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
