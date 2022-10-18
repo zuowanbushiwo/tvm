@@ -48,6 +48,14 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
+      - name: Build TVM
+        shell: bash -l {0}
+        run: |
+          mkdir build
+          cd build
+          ../tests/scripts/task_config_build_jvm.sh .
+          cmake ..
+          make runtime -j4          
       - name: Build TVM4J
         run: |
           make jvmpkg
